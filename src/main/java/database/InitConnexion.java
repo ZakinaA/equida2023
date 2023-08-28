@@ -13,23 +13,10 @@ import jakarta.servlet.ServletContextListener;
 public class InitConnexion implements ServletContextListener {
     //parametres de connexion
     Connection connection=null;
-    String pilotejdbc=null;
-    String urlconnexionjdbc=null;
-    String utilisateurjdbc=null;
-    String motdepassejdbc=null;
-
     //action déclenchée lors du chargement du context
     public void contextInitialized(ServletContextEvent event)
     {
         ServletContext servletContext = event.getServletContext();
-
-        try {
-            Class.forName("org.mariadb.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            System.out.println("Erreur lors du chargemement du pilote " + e.getMessage());
-            throw new RuntimeException(e);
-        }
-
 
         try
         {
